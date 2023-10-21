@@ -13,16 +13,12 @@ if tekrar_sayisi > kelime_uzunlugu:
 # Tüm kombinasyonların oluşturulması
 tum_karakterler = list(karakterler)
 kombinasyonlar = itertools.product(tum_karakterler, repeat=kelime_uzunlugu)
-kelimeler = [''.join(comb) for comb in kombinasyonlar if ''.join(comb).count(comb[0]) <= tekrar_sayisi]
-
+kelimeler = [''.join(comb) for comb in kombinasyonlar if max(comb.count(char) for char in comb) == tekrar_sayisi]
 
 # Wordlist dosyasına yazılması
 with open('wordlist.txt', 'w') as f:
     for kelime in kelimeler:
-        en_fazla_tekrar = max(kelime.count(harf) for harf in kelime)
-        if en_fazla_tekrar <= tekrar_sayisi:
-            f.write(f"{kelime}\n")
-
+        f.write(f"{kelime}\n")
 
 print(f"Wordlist 'wordlist.txt' dosyasına kaydedildi.")
 
