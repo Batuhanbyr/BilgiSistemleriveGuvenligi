@@ -3,22 +3,18 @@ import itertools
 # Kriterlerin alınması
 kelime_uzunlugu = int(input("Kelimenin uzunluğunu girin: "))
 karakterler = input("Karakterler, rakamlar veya özel karakterler: ")
-tekrar_sayisi = int(input("Harf/rakam/özel karakter tekrar etme sayısı: "))
 
-# Kontroller
-if tekrar_sayisi > kelime_uzunlugu:
-    print("Hata: Tekrar sayısı, kelime uzunluğunu geçemez.")
-    exit()
 
 # Tüm kombinasyonların oluşturulması
 tum_karakterler = list(karakterler)
 kombinasyonlar = itertools.product(tum_karakterler, repeat=kelime_uzunlugu)
-kelimeler = [''.join(comb) for comb in kombinasyonlar if max(comb.count(char) for char in comb) == tekrar_sayisi]
+kelimeler = [''.join(comb) for comb in kombinasyonlar]
 
 # Wordlist dosyasına yazılması
 with open('wordlist.txt', 'w') as f:
     for kelime in kelimeler:
         f.write(f"{kelime}\n")
+
 
 print(f"Wordlist 'wordlist.txt' dosyasına kaydedildi.")
 
