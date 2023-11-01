@@ -48,8 +48,8 @@ def otp():
     alici_email = entry1.get()  # Kullanıcının girdiği e-posta adresi
     son_giris_zamani = time.time()
 
-    gonderici_email = "bbayir686@gmail.com"
-    gonderici_sifre = "sdhd hrlf lfvg frfi"
+    gonderici_email = "your_mail_adress"
+    gonderici_sifre = "your_mail_password"
     otp_sifre = random.randint(100000, 999999)
 
     baslik = "Konu: Tek Kullanımlık Şifre (OTP) Doğrulaması"
